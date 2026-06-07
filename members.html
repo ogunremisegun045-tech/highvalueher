@@ -17,7 +17,6 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   body{font-family:'DM Sans',sans-serif;background:var(--dark);color:#fff;min-height:100vh;}
 
-  /* ── NAV ── */
   nav {
     position:sticky;top:0;z-index:100;
     background:rgba(15,6,8,0.92);
@@ -41,7 +40,6 @@
   }
   .nav-back:hover{color:var(--gold);border-color:rgba(201,168,76,0.3);}
 
-  /* ── HERO ── */
   .hero {
     padding:60px 24px 48px;
     text-align:center;
@@ -73,7 +71,6 @@
     margin:24px auto 0;
   }
 
-  /* ── TABS ── */
   .tabs-wrap {
     position:sticky;top:60px;z-index:99;
     background:rgba(15,6,8,0.95);
@@ -108,15 +105,12 @@
     vertical-align:middle;
   }
 
-  /* ── PANELS ── */
   .panel{display:none;animation:panelIn 0.35s ease both;}
   .panel.active{display:block;}
   @keyframes panelIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
-  /* ── CONTENT WRAPPER ── */
   .content-wrap{max-width:720px;margin:0 auto;padding:40px 24px 80px;}
 
-  /* ── CHAPTER BLOCKS ── */
   .chapter {
     margin-bottom:48px;
     padding-bottom:48px;
@@ -158,7 +152,6 @@
     color:rgba(255,255,255,0.72);margin-bottom:16px;
   }
 
-  /* Callout */
   .callout {
     margin:24px 0;
     padding:20px 24px;
@@ -172,7 +165,6 @@
     color:rgba(255,255,255,0.85);line-height:1.5;margin:0;
   }
 
-  /* Key insight */
   .insight {
     margin:24px 0;
     padding:18px 20px;
@@ -189,7 +181,6 @@
     color:rgba(255,255,255,0.6);line-height:1.7;margin:0;
   }
 
-  /* Rule box */
   .rule-box {
     margin:24px 0;
     padding:22px 24px;
@@ -212,7 +203,6 @@
   }
   .rule-box p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7;margin:0;}
 
-  /* Script box (Bonus 1) */
   .script-block {
     margin:20px 0;
     background:rgba(255,255,255,0.04);
@@ -251,7 +241,6 @@
   }
   .warning-note p{font-size:12.5px;color:rgba(255,160,150,0.8);line-height:1.6;margin:0;}
 
-  /* Red flag rows (Bonus 2) */
   .flag-section-head {
     background:var(--teal);
     padding:10px 16px;
@@ -295,17 +284,6 @@
     color:#fff;line-height:1.6;margin:0;
   }
 
-  /* Section divider */
-  .section-break {
-    text-align:center;padding:32px 0;
-  }
-  .section-break span {
-    font-family:'Cormorant Garamond',serif;
-    font-style:italic;font-size:13px;
-    color:rgba(201,168,76,0.4);letter-spacing:0.1em;
-  }
-
-  /* Final word */
   .final-word {
     margin-top:48px;padding:40px 32px;
     background:rgba(255,255,255,0.03);
@@ -328,37 +306,110 @@
     color:rgba(255,255,255,0.85);margin-top:8px;
   }
 
-  /* ── WhatsApp Float ── */
-  .wa-float {
-    position:fixed;bottom:24px;right:24px;z-index:999;
-    width:52px;height:52px;background:#25D366;border-radius:50%;
+  /* Tracker styles */
+  .tracker-day {
+    display:flex;gap:14px;align-items:flex-start;
+    padding:14px 16px;
+    background:rgba(255,255,255,0.03);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    transition:background 0.2s;
+    cursor:pointer;
+  }
+  .tracker-day:hover{background:rgba(201,168,76,0.05);}
+  .tracker-day.checked{background:rgba(139,34,82,0.1);}
+  .tracker-check {
+    width:20px;height:20px;flex-shrink:0;
+    border:1px solid rgba(201,168,76,0.4);
+    border-radius:2px;margin-top:2px;
     display:flex;align-items:center;justify-content:center;
-    box-shadow:0 4px 20px rgba(37,211,102,0.4);
-    text-decoration:none;transition:transform 0.3s,box-shadow 0.3s;
-    animation:waPulse 2.5s ease-in-out infinite;
+    font-size:12px;color:var(--gold);
+    transition:all 0.2s;
   }
-  .wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.5);animation:none;}
-  @keyframes waPulse{
-    0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4);}
-    50%{box-shadow:0 4px 32px rgba(37,211,102,0.65);}
+  .tracker-day.checked .tracker-check{background:var(--rose);border-color:var(--rose);color:#fff;}
+  .tracker-text strong{display:block;font-size:13px;font-weight:500;color:rgba(255,255,255,0.8);margin-bottom:2px;}
+  .tracker-text span{font-size:12px;color:rgba(255,255,255,0.35);line-height:1.5;}
+
+  /* Green flag styles */
+  .green-row {
+    display:flex;gap:14px;align-items:flex-start;
+    padding:14px 16px;
+    background:rgba(27,79,92,0.08);
+    border-bottom:1px solid rgba(255,255,255,0.05);
   }
-  .wa-float svg{width:26px;height:26px;}
+  .green-emoji{font-size:18px;flex-shrink:0;margin-top:1px;}
+  .green-text strong{display:block;font-size:13.5px;font-weight:500;color:rgba(255,255,255,0.85);margin-bottom:3px;}
+  .green-text span{font-size:12px;color:rgba(255,255,255,0.38);line-height:1.55;}
+
+  /* Power texts */
+  .power-text-block {
+    margin:20px 0;
+    background:rgba(255,255,255,0.04);
+    border-radius:3px;
+    overflow:hidden;
+    border:1px solid rgba(201,168,76,0.1);
+  }
+  .power-text-header {
+    padding:10px 16px;
+    background:rgba(201,168,76,0.08);
+    border-bottom:1px solid rgba(201,168,76,0.1);
+  }
+  .power-text-header span{font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);}
+  .power-text-msg {
+    padding:16px 20px;
+    border-left:3px solid var(--gold);
+  }
+  .power-text-msg p {
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-size:16px;
+    color:#fff;line-height:1.6;margin:0;
+  }
+  .power-text-why {
+    padding:12px 20px;
+    border-left:3px solid rgba(201,168,76,0.2);
+  }
+  .power-text-why p{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.7;margin:0;}
+
+  /* Cheat detector */
+  .detector-question {
+    margin:12px 0;
+    padding:16px 20px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.07);
+    border-radius:3px;
+  }
+  .detector-q{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.6;margin-bottom:10px;}
+  .detector-options{display:flex;gap:10px;flex-wrap:wrap;}
+  .detector-opt {
+    padding:6px 14px;
+    border:1px solid rgba(201,168,76,0.25);
+    border-radius:20px;
+    font-size:12px;color:rgba(201,168,76,0.7);
+    cursor:pointer;transition:all 0.2s;
+    background:none;font-family:'DM Sans',sans-serif;
+  }
+  .detector-opt:hover,.detector-opt.selected{background:rgba(139,34,82,0.3);border-color:var(--rose-light);color:#fff;}
+  .detector-result {
+    margin-top:24px;padding:20px 24px;
+    border-radius:3px;display:none;
+  }
+  .detector-result.show{display:block;animation:panelIn 0.3s ease;}
+  .detector-result.trap{background:rgba(139,34,82,0.15);border:1px solid rgba(139,34,82,0.3);}
+  .detector-result.safe{background:rgba(27,79,92,0.15);border:1px solid rgba(27,79,92,0.3);}
+  .detector-result h4{font-family:'Cormorant Garamond',serif;font-size:20px;color:#fff;margin-bottom:10px;}
+  .detector-result p{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7;margin:0;}
 
   @media(max-width:600px){
     .content-wrap{padding:28px 16px 80px;}
-    .card{padding:24px 18px;}
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-brand">High Value Her <span>Members Area</span></div>
-  <a class="nav-back" href="password.html">← Exit</a>
+  <a class="nav-back" href="password.html">Exit</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-eyebrow">Welcome to Your Members Area</div>
   <h1>Your Content.<br><em>All of It.</em></h1>
@@ -366,30 +417,23 @@
   <div class="hero-divider"></div>
 </section>
 
-<!-- TABS -->
 <div class="tabs-wrap">
   <div class="tabs">
-    <button class="tab-btn active" onclick="showTab('blueprint',this)">
-      How to Make Him Commit <span class="tab-badge">Main</span>
-    </button>
-    <button class="tab-btn" onclick="showTab('chosen',this)">
-      The Art of Being Chosen
-    </button>
-    <button class="tab-btn" onclick="showTab('scripts',this)">
-      Boundary Scripts <span class="tab-badge">Bonus 1</span>
-    </button>
-    <button class="tab-btn" onclick="showTab('redflags',this)">
-      Red Flag Cheat Sheet <span class="tab-badge">Bonus 2</span>
-    </button>
+    <button class="tab-btn active" onclick="showTab('blueprint',this)">How to Make Him Commit <span class="tab-badge">Main</span></button>
+    <button class="tab-btn" onclick="showTab('chosen',this)">The Art of Being Chosen</button>
+    <button class="tab-btn" onclick="showTab('scripts',this)">Boundary Scripts <span class="tab-badge">Bonus 1</span></button>
+    <button class="tab-btn" onclick="showTab('redflags',this)">Red Flag Sheet <span class="tab-badge">Bonus 2</span></button>
+    <button class="tab-btn" onclick="showTab('tracker',this)">30-Day Tracker <span class="tab-badge">Bonus 3</span></button>
+    <button class="tab-btn" onclick="showTab('greenflags',this)">Green Flag List <span class="tab-badge">Bonus 4</span></button>
+    <button class="tab-btn" onclick="showTab('coldresponse',this)">When He Goes Cold <span class="tab-badge">Bonus 5</span></button>
+    <button class="tab-btn" onclick="showTab('detector',this)">Trap Detector <span class="tab-badge">Bonus 6</span></button>
+    <button class="tab-btn" onclick="showTab('powertexts',this)">9 Power Texts <span class="tab-badge">Bonus 7</span></button>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════ -->
-<!-- PANEL 1: HOW TO MAKE HIM COMMIT           -->
-<!-- ═══════════════════════════════════════════ -->
+<!-- PANEL 1: HOW TO MAKE HIM COMMIT -->
 <div class="panel active" id="panel-blueprint">
 <div class="content-wrap">
-
   <div class="chapter">
     <div class="chapter-num">Before We Begin</div>
     <h2>The Foundation of <em>Everything</em></h2>
@@ -404,10 +448,10 @@
     <h2>The Chase Is <em>a Trap</em></h2>
     <p class="chapter-lead">Why chasing a man never works and what to do instead.</p>
     <div class="chapter-divider"></div>
-    <p>When you pursue a man who has not yet shown you consistent, genuine interest, you are giving him a gift he has not worked for. Human psychology — especially in men — is built around the concept of earned value. The things we work hardest for are the things we value most.</p>
+    <p>When you pursue a man who has not yet shown you consistent, genuine interest, you are giving him a gift he has not worked for. Human psychology, especially in men, is built around the concept of earned value. The things we work hardest for are the things we value most.</p>
     <p>When a woman makes herself entirely too easy to access, she removes the one thing that keeps a man engaged at a deeper level: the desire to pursue.</p>
     <div class="callout"><p>You cannot chase a man into loving you. The more you pursue him, the more you teach him that your time, attention, and affection cost nothing. And people do not treasure what costs them nothing.</p></div>
-    <p>The moment you stop over-investing in a man who has not earned that level of investment, one of two things will happen. Either he will step up — or he will fade away, revealing that he was never genuinely interested in the first place. Both outcomes are a win for you.</p>
+    <p>The moment you stop over-investing in a man who has not earned that level of investment, one of two things will happen. Either he will step up, or he will fade away, revealing that he was never genuinely interested in the first place. Both outcomes are a win for you.</p>
     <div class="rule-box">
       <div class="rule-label">Rule 1</div>
       <h3>Stop Chasing. Full Stop.</h3>
@@ -424,7 +468,7 @@
     <p>When a man encounters a woman who is genuinely absorbed in her own world, something shifts in how he sees her. She is a complete person with her own story, her own direction, her own standards for what belongs in her life.</p>
     <div class="insight">
       <div class="insight-label">What Men Find Irresistible</div>
-      <p>A woman who is happy in her own skin before he arrived. Content with her friendships, her work, her hobbies, her solitude. She is not waiting to be saved. She is simply living well — and she is open to sharing that life with someone who brings genuine value to it.</p>
+      <p>A woman who is happy in her own skin before he arrived. Content with her friendships, her work, her hobbies, her solitude. She is not waiting to be saved. She is simply living well and she is open to sharing that life with someone who brings genuine value to it.</p>
     </div>
     <div class="rule-box">
       <div class="rule-label">Rule 2</div>
@@ -440,7 +484,7 @@
     <div class="chapter-divider"></div>
     <p>Every time you initiate before he has had the chance to, you rob him of the experience of missing you. Missing someone is not a passive experience. It is the feeling that creates longing, and longing is what motivates pursuit.</p>
     <div class="callout"><p>If you stopped initiating all contact tomorrow, how long would it take for him to reach out? That answer tells you almost everything you need to know about his current level of interest.</p></div>
-    <p>Letting him lead does not mean going completely quiet. It means responding warmly and enthusiastically when he reaches out — and then allowing him the space to reach out again.</p>
+    <p>Letting him lead does not mean going completely quiet. It means responding warmly and enthusiastically when he reaches out, and then allowing him the space to reach out again.</p>
     <div class="rule-box">
       <div class="rule-label">Rule 3</div>
       <h3>Let His Actions Tell the Truth.</h3>
@@ -457,7 +501,7 @@
     <p>The man who is genuinely interested in building something with you will eventually want to hear your voice. He will want the kind of conversation that cannot happen in two-sentence exchanges.</p>
     <div class="insight">
       <div class="insight-label">The Standard That Separates You</div>
-      <p>Women who get called are women who made it clear — without drama or ultimatums — that they prefer real conversation. A simple, confident message: "I'm better on the phone than over text, give me a call sometime" communicates more about your self-worth than almost anything else you could say.</p>
+      <p>Women who get called are women who made it clear, without drama or ultimatums, that they prefer real conversation. A simple, confident message: "I am better on the phone than over text, give me a call sometime" communicates more about your self-worth than almost anything else you could say.</p>
     </div>
     <div class="rule-box">
       <div class="rule-label">Rule 4</div>
@@ -489,7 +533,7 @@
     <p class="chapter-lead">The one thing that separates women he commits to from women he uses.</p>
     <div class="chapter-divider"></div>
     <p>A boundary is not a rule you announce in a relationship. It is a line that reflects your actual values and that you genuinely enforce regardless of how attractive, charming, or promising a man seems.</p>
-    <div class="callout"><p>A woman can walk into a room with perfect posture, radiant energy, and total social ease — and still allow men to walk all over her emotionally. Confidence without firm personal limits is decoration. It makes you attractive. It does not make you safe from being taken for granted.</p></div>
+    <div class="callout"><p>A woman can walk into a room with perfect posture, radiant energy, and total social ease and still allow men to walk all over her emotionally. Confidence without firm personal limits is decoration. It makes you attractive. It does not make you safe from being taken for granted.</p></div>
     <p>The woman he truly commits to is the woman whose self-respect was so consistent and so genuine that he never once felt like he could take advantage of her.</p>
     <div class="rule-box">
       <div class="rule-label">Rule 6</div>
@@ -531,7 +575,7 @@
 
   <div class="chapter">
     <div class="chapter-num">Chapter 09</div>
-    <h2>Red Flags & <em>Walk-Away Power</em></h2>
+    <h2>Red Flags and <em>Walk-Away Power</em></h2>
     <p class="chapter-lead">Knowing when to leave and having the strength to actually do it.</p>
     <div class="chapter-divider"></div>
     <p>Walk-away power is exactly what it sounds like. The ability to leave a situation that is not serving you, even when part of you wants to stay. Nothing communicates your value more clearly than the willingness to walk away from someone who does not recognise it.</p>
@@ -568,28 +612,20 @@
     <p>Stop chasing. Build your life. Hold your standards. Be warm and open with the men who earn it. And be entirely at peace walking away from those who do not.</p>
     <p class="closing">You are not waiting to be chosen. You are deciding who is worth choosing back.</p>
   </div>
-
 </div>
 </div>
 
-<!-- ═══════════════════════════════════════════ -->
-<!-- PANEL 2: THE ART OF BEING CHOSEN          -->
-<!-- ═══════════════════════════════════════════ -->
+<!-- PANEL 2: THE ART OF BEING CHOSEN -->
 <div class="panel" id="panel-chosen">
 <div class="content-wrap">
-
   <div class="chapter">
     <div class="chapter-num">Principle 01</div>
-    <h2>Own Your World: <em>Be Hard-to-Have</em></h2>
+    <h2>Own Your World: <em>Be Hard to Have</em></h2>
     <p class="chapter-lead">A woman with a full life is the most magnetic force a man will ever encounter.</p>
     <div class="chapter-divider"></div>
     <p>One of the most common reasons a man's interest fades is that the woman gave him unlimited access to her time and attention far too soon. Ease is the enemy of desire. Men are wired to solve problems and pursue what challenges them.</p>
     <p>This is not about playing games. Build your life. Pour into your friendships, your ambitions, your passions. When a man steps into your world, he should feel he is gaining entry to something exceptional.</p>
-    <div class="callout"><p>Be hard-to-have — not as a strategy, but because your life is genuinely worth protecting.</p></div>
-    <div class="insight">
-      <div class="insight-label">Contentment vs. Complacency</div>
-      <p>Being content in your single life — fulfilled, happy, and self-sufficient — is irresistibly attractive. Being complacent — settled and disengaged — is not. A man wants to add to your happiness, not be the sole source of it.</p>
-    </div>
+    <div class="callout"><p>Be hard to have, not as a strategy, but because your life is genuinely worth protecting.</p></div>
   </div>
 
   <div class="chapter">
@@ -597,12 +633,8 @@
     <h2>Let Him Lead: <em>The Power of Restraint</em></h2>
     <p class="chapter-lead">When you give a man the space to miss you, you give him the chance to choose you.</p>
     <div class="chapter-divider"></div>
-    <p>If you are consistently the first to text, call, and propose plans, you are carrying the relationship forward alone — and a relationship carried by one person is not a relationship at all.</p>
-    <p>Pulling back is not cruelty; it is clarity. A man who genuinely wants you will find a way to reach you. His consistency, his creativity in staying connected — these are the real measures of his desire.</p>
-    <div class="insight">
-      <div class="insight-label">The Clarity Test</div>
-      <p>Letting him lead the contact is the single most reliable way to gauge his interest level. His actions — unprompted — will tell you everything you need to know without a single anxious conversation.</p>
-    </div>
+    <p>If you are consistently the first to text, call, and propose plans, you are carrying the relationship forward alone. A relationship carried by one person is not a relationship at all.</p>
+    <p>Pulling back is not cruelty. It is clarity. A man who genuinely wants you will find a way to reach you. His consistency and his creativity in staying connected are the real measures of his desire.</p>
   </div>
 
   <div class="chapter">
@@ -611,8 +643,7 @@
     <p class="chapter-lead">The depth of his communication reveals the depth of his intention.</p>
     <div class="chapter-divider"></div>
     <p>A man who is genuinely invested in you will naturally want to hear your voice. He will call with concrete plans. He will not hide behind the safety of a screen.</p>
-    <p>A man who refuses to escalate even this small gesture of effort will not escalate his commitment, either.</p>
-    <div class="callout"><p>Think of texts as the snacks of communication — delightful, but never a substitute for a real meal.</p></div>
+    <div class="callout"><p>Think of texts as the snacks of communication. Delightful, but never a substitute for a real meal.</p></div>
   </div>
 
   <div class="chapter">
@@ -621,7 +652,7 @@
     <p class="chapter-lead">A woman of integrity is a woman a quality man cannot afford to lose.</p>
     <div class="chapter-divider"></div>
     <p>Reliability is not glamorous, but it is profoundly attractive to men who take themselves seriously. This consistency communicates something no physical attribute can: that you are a woman who can be trusted.</p>
-    <div class="callout"><p>Trust is the most valuable currency in any relationship — and reliability is how you earn it.</p></div>
+    <div class="callout"><p>Trust is the most valuable currency in any relationship. Reliability is how you earn it.</p></div>
   </div>
 
   <div class="chapter">
@@ -630,7 +661,6 @@
     <p class="chapter-lead">Grace and discretion in how you discuss your history signals emotional maturity.</p>
     <div class="chapter-divider"></div>
     <p>When you are getting to know someone new, resist the temptation to deliver a comprehensive account of your past relationships. A man who barely knows you has not yet built the emotional investment required to contextualise your story charitably.</p>
-    <p>Your story is earned by those who have first demonstrated that they deserve to hear it.</p>
     <div class="callout"><p>Your history is sacred. Share it with those who have earned the right to hold it.</p></div>
   </div>
 
@@ -646,20 +676,19 @@
   <div class="chapter">
     <div class="chapter-num">Principle 07</div>
     <h2>The Art of <em>Measured Vulnerability</em></h2>
-    <p class="chapter-lead">Allow your depth to be discovered — never displayed all at once.</p>
+    <p class="chapter-lead">Allow your depth to be discovered, never displayed all at once.</p>
     <div class="chapter-divider"></div>
     <p>Acting fully on your feelings before mutual interest has been clearly established is one of the most common ways women inadvertently lower their value in a man's eyes.</p>
-    <p>Watch his actions. A man who is consistent, enthusiastic, and proactive in pursuing your attention has signalled that you matter to him. That is your green light.</p>
     <div class="callout"><p>Let him earn your depth. The woman who reveals everything immediately leaves nothing to discover.</p></div>
   </div>
 
   <div class="chapter">
     <div class="chapter-num">Principle 08</div>
     <h2>Be Easy to Please, <em>Hard to Have</em></h2>
-    <p class="chapter-lead">High standards and a warm, flexible spirit are not opposites — they are a powerful combination.</p>
+    <p class="chapter-lead">High standards and a warm, flexible spirit are not opposites. They are a powerful combination.</p>
     <div class="chapter-divider"></div>
     <p>Standards determine who earns access to you. Flexibility determines how pleasant it is to be around you once they have. The most sought-after women hold both in balance.</p>
-    <div class="callout"><p>The golden formula: Be hard-to-have, easy-to-please, and impossible to forget.</p></div>
+    <div class="callout"><p>The golden formula: Be hard to have, easy to please, and impossible to forget.</p></div>
   </div>
 
   <div class="chapter">
@@ -668,7 +697,6 @@
     <p class="chapter-lead">Vulnerability, offered at the right time, is the most powerful bonding force in existence.</p>
     <div class="chapter-divider"></div>
     <p>A man cannot develop a deep emotional bond with a woman who keeps herself perfectly curated at all times. Real intimacy requires real exposure.</p>
-    <p>Vulnerability is not weakness. It is one of the highest forms of courage. And for the man who is worthy of you, the things you have been most careful to hide may be the very things that make him certain he never wants to let you go.</p>
     <div class="callout"><p>The right man will not run from your depth. He will anchor himself to it.</p></div>
   </div>
 
@@ -677,35 +705,26 @@
     <h2>Love Boldly <em>Once He Has Earned It</em></h2>
     <p class="chapter-lead">When a man proves his worth, pour into him without fear and without keeping score.</p>
     <div class="chapter-divider"></div>
-    <p>The first practice is receptivity: when he does something thoughtful, acknowledge it generously. Appreciation is not weakness. It is oxygen for a man's commitment.</p>
-    <p>The second is proactive love. Learn how he experiences love and speak his language fluently. Love him in the way he is wired to receive it, and you will forge a connection few women ever achieve.</p>
-    <div class="callout"><p>Love proactively. Give generously. And let his response — not your fear — guide what comes next.</p></div>
-    <div class="insight">
-      <div class="insight-label">The Final Filter</div>
-      <p>If a man respects, responds to, and returns your love with growing loyalty and commitment, he is worth your continued investment. If he takes your love for granted without reciprocation, the answer is simple: release him.</p>
-    </div>
+    <p>When he does something thoughtful, acknowledge it generously. Appreciation is not weakness. It is oxygen for a man's commitment.</p>
+    <div class="callout"><p>Love proactively. Give generously. And let his response, not your fear, guide what comes next.</p></div>
   </div>
 
   <div class="final-word">
     <h3>A Final Word</h3>
     <p>The principles in this guide are not tricks or manipulations. They are the natural expressions of a woman who knows her worth, lives a full life, and chooses to share that life only with someone who has genuinely earned a place in it.</p>
-    <p class="closing">You are worth choosing — fully, consistently, and without hesitation.</p>
+    <p class="closing">You are worth choosing, fully, consistently, and without hesitation.</p>
   </div>
-
 </div>
 </div>
 
-<!-- ═══════════════════════════════════════════ -->
-<!-- PANEL 3: BONUS 1 — BOUNDARY SCRIPTS       -->
-<!-- ═══════════════════════════════════════════ -->
+<!-- PANEL 3: BONUS 1 — BOUNDARY SCRIPTS -->
 <div class="panel" id="panel-scripts">
 <div class="content-wrap">
-
   <div class="chapter">
-    <div class="chapter-num">How to Use This Bonus</div>
+    <div class="chapter-num">Bonus 1</div>
     <h2>The Boundary <em>Scripts</em></h2>
     <div class="chapter-divider"></div>
-    <p>The hardest part of dating is not knowing what to feel. It is not knowing what to say. These scripts exist so that never happens again. Each one is written for a specific situation — the ones that hurt the most and leave most women feeling powerless.</p>
+    <p>The hardest part of dating is not knowing what to feel. It is not knowing what to say. These scripts exist so that never happens again. Each one is written for a specific situation, the ones that hurt the most and leave most women feeling powerless.</p>
     <div class="callout"><p>Boundaries are not walls. They are the standards that tell a man how to love you correctly.</p></div>
   </div>
 
@@ -714,28 +733,14 @@
     <h2>When He <em>Goes Cold</em></h2>
     <div class="chapter-divider"></div>
     <div class="script-block">
-      <div class="script-say">
-        <div class="script-say-label">Say This</div>
-        <p>"I have noticed things have felt different between us lately. I am not going to chase that or try to figure out what changed. When you know what you want, I am open to talking. Until then, I am going to focus on myself."</p>
-      </div>
-      <div class="script-why">
-        <div class="script-why-label">Why It Works</div>
-        <p>This script names the pattern without accusation, removes your energy from the situation, and puts the decision back in his hands where it belongs. You are not begging. You are not panicking. You are communicating that your time and attention have a standard.</p>
-      </div>
+      <div class="script-say"><div class="script-say-label">Say This</div><p>"I have noticed things have felt different between us lately. I am not going to chase that or try to figure out what changed. When you know what you want, I am open to talking. Until then, I am going to focus on myself."</p></div>
+      <div class="script-why"><div class="script-why-label">Why It Works</div><p>This script names the pattern without accusation, removes your energy from the situation, and puts the decision back in his hands where it belongs. You are not begging. You are not panicking. You are communicating that your time and attention have a standard.</p></div>
     </div>
     <div class="script-block">
-      <div class="script-say">
-        <div class="script-say-label">Say This</div>
-        <p>"I am not really available for inconsistency. If something is going on with you, I am happy to listen. But I need you to show up properly or not at all."</p>
-      </div>
-      <div class="script-why">
-        <div class="script-why-label">Why It Works</div>
-        <p>Short, direct, and completely calm. One clear statement like this does more than ten anxious texts ever could.</p>
-      </div>
+      <div class="script-say"><div class="script-say-label">Say This</div><p>"I am not really available for inconsistency. If something is going on with you, I am happy to listen. But I need you to show up properly or not at all."</p></div>
+      <div class="script-why"><div class="script-why-label">Why It Works</div><p>Short, direct, and completely calm. One clear statement like this does more than ten anxious texts ever could.</p></div>
     </div>
-    <div class="warning-note">
-      <p><strong>What NOT to say:</strong> "Did I do something wrong?" / "Why are you being like this?" / "I miss you so much please talk to me." These hand him all the power and confirm that going cold works as a strategy.</p>
-    </div>
+    <div class="warning-note"><p><strong>What NOT to say:</strong> "Did I do something wrong?" / "Why are you being like this?" / "I miss you so much please talk to me." These hand him all the power and confirm that going cold works as a strategy.</p></div>
   </div>
 
   <div class="chapter">
@@ -743,51 +748,27 @@
     <h2>When He Wants Benefits <em>Without the Title</em></h2>
     <div class="chapter-divider"></div>
     <div class="script-block">
-      <div class="script-say">
-        <div class="script-say-label">Say This</div>
-        <p>"I enjoy spending time with you. But I have to be honest — I am not interested in something undefined. I know what I want and it is a real relationship. If that is not where you are, I respect that. But it means this cannot continue the way it has been."</p>
-      </div>
-      <div class="script-why">
-        <div class="script-why-label">Why It Works</div>
-        <p>A man who benefits from you without committing to you is banking on the fact that you will not say this. Saying it changes everything.</p>
-      </div>
+      <div class="script-say"><div class="script-say-label">Say This</div><p>"I enjoy spending time with you. But I have to be honest. I am not interested in something undefined. I know what I want and it is a real relationship. If that is not where you are, I respect that. But it means this cannot continue the way it has been."</p></div>
+      <div class="script-why"><div class="script-why-label">Why It Works</div><p>A man who benefits from you without committing to you is banking on the fact that you will not say this. Saying it changes everything.</p></div>
     </div>
     <div class="script-block">
-      <div class="script-say">
-        <div class="script-say-label">Say This</div>
-        <p>"I am not available for situationships. I care about you but I care about myself more. When you are ready for something real, you know where to find me."</p>
-      </div>
-      <div class="script-why">
-        <div class="script-why-label">Why It Works</div>
-        <p>Walk-away energy — said calmly and without drama. Use this when the conversation has already happened and nothing has changed.</p>
-      </div>
+      <div class="script-say"><div class="script-say-label">Say This</div><p>"I am not available for situationships. I care about you but I care about myself more. When you are ready for something real, you know where to find me."</p></div>
+      <div class="script-why"><div class="script-why-label">Why It Works</div><p>Walk-away energy, said calmly and without drama. Use this when the conversation has already happened and nothing has changed.</p></div>
     </div>
     <div class="callout"><p>A man who wants you will make it official. A man who hesitates is telling you exactly where you stand.</p></div>
   </div>
 
   <div class="chapter">
     <div class="chapter-num">Script 3</div>
-    <h2>When He Says "I'm Not Ready" <em>But Won't Let You Go</em></h2>
+    <h2>When He Says He Is Not Ready <em>But Will Not Let You Go</em></h2>
     <div class="chapter-divider"></div>
     <div class="script-block">
-      <div class="script-say">
-        <div class="script-say-label">Say This</div>
-        <p>"I hear you. And I respect that you are being honest. But I also have to be honest with you — I cannot hold space for someone who is not moving toward me. Not ready today is okay. Not ready indefinitely is not something I can work with."</p>
-      </div>
-      <div class="script-why">
-        <div class="script-why-label">Why It Works</div>
-        <p>This validates his honesty while firmly protecting yours. You are not punishing him for not being ready. You are simply refusing to wait forever for a decision that may never come.</p>
-      </div>
+      <div class="script-say"><div class="script-say-label">Say This</div><p>"I hear you. And I respect that you are being honest. But I also have to be honest with you. I cannot hold space for someone who is not moving toward me. Not ready today is okay. Not ready indefinitely is not something I can work with."</p></div>
+      <div class="script-why"><div class="script-why-label">Why It Works</div><p>This validates his honesty while firmly protecting yours. You are not punishing him for not being ready. You are simply refusing to wait forever for a decision that may never come.</p></div>
     </div>
     <div class="script-block">
-      <div class="script-say">
-        <div class="script-say-label">Say This</div>
-        <p>"I am not going to pressure you into a commitment. But I am also not going to keep investing in something with no direction. So let us be clear about what this is — or I need to step back."</p>
-      </div>
-      <div class="script-why">
-        <div class="script-why-label">Why It Works</div>
-        <p>This forces a real conversation by making the alternative — losing you — feel real.</p>
-      </div>
+      <div class="script-say"><div class="script-say-label">Say This</div><p>"I am not going to pressure you into a commitment. But I am also not going to keep investing in something with no direction. So let us be clear about what this is, or I need to step back."</p></div>
+      <div class="script-why"><div class="script-why-label">Why It Works</div><p>This forces a real conversation by making the alternative, losing you, feel real.</p></div>
     </div>
   </div>
 
@@ -796,24 +777,12 @@
     <h2>When He Avoids <em>the Commitment Conversation</em></h2>
     <div class="chapter-divider"></div>
     <div class="script-block">
-      <div class="script-say">
-        <div class="script-say-label">Say This</div>
-        <p>"I want to talk about something and I need you to stay in the conversation with me. I am not trying to pressure you. I just need to understand where we are going, because I cannot keep investing without knowing."</p>
-      </div>
-      <div class="script-why">
-        <div class="script-why-label">Why It Works</div>
-        <p>Opening with "I need you to stay in this with me" disarms defensiveness before it starts. Men shut down when they feel attacked. They stay open when they feel safe.</p>
-      </div>
+      <div class="script-say"><div class="script-say-label">Say This</div><p>"I want to talk about something and I need you to stay in the conversation with me. I am not trying to pressure you. I just need to understand where we are going, because I cannot keep investing without knowing."</p></div>
+      <div class="script-why"><div class="script-why-label">Why It Works</div><p>Opening with "I need you to stay in this with me" disarms defensiveness before it starts. Men shut down when they feel attacked. They stay open when they feel safe.</p></div>
     </div>
     <div class="script-block">
-      <div class="script-say">
-        <div class="script-say-label">Say This</div>
-        <p>"Every time I bring this up you change the subject and I have noticed that. I am not going to keep bringing it up after today. But I do need an answer — are we building something together or not?"</p>
-      </div>
-      <div class="script-why">
-        <div class="script-why-label">Why It Works</div>
-        <p>Direct, calm, and creates a deadline without an ultimatum. What he does next is your answer.</p>
-      </div>
+      <div class="script-say"><div class="script-say-label">Say This</div><p>"Every time I bring this up you change the subject and I have noticed that. I am not going to keep bringing it up after today. But I do need an answer. Are we building something together or not?"</p></div>
+      <div class="script-why"><div class="script-why-label">Why It Works</div><p>Direct, calm, and creates a deadline without an ultimatum. What he does next is your answer.</p></div>
     </div>
     <div class="callout"><p>You should never have to beg for a conversation about your own future. If he cannot have it, he has already answered you.</p></div>
   </div>
@@ -823,24 +792,12 @@
     <h2>When You Need <em>to Walk Away</em></h2>
     <div class="chapter-divider"></div>
     <div class="script-block">
-      <div class="script-say">
-        <div class="script-say-label">Say This</div>
-        <p>"I have thought about this carefully and I have decided that this is not working for me anymore. I am not angry and I am not doing this to make you chase me. I genuinely need more than what this has been, and staying would mean settling. I wish you well."</p>
-      </div>
-      <div class="script-why">
-        <div class="script-why-label">Why It Works</div>
-        <p>The most powerful walk-away script is one with no drama and no door left open for negotiation. You are not leaving to teach him a lesson. You are leaving because you deserve more.</p>
-      </div>
+      <div class="script-say"><div class="script-say-label">Say This</div><p>"I have thought about this carefully and I have decided that this is not working for me anymore. I am not angry and I am not doing this to make you chase me. I genuinely need more than what this has been, and staying would mean settling. I wish you well."</p></div>
+      <div class="script-why"><div class="script-why-label">Why It Works</div><p>The most powerful walk-away script is one with no drama and no door left open for negotiation. You are not leaving to teach him a lesson. You are leaving because you deserve more.</p></div>
     </div>
     <div class="script-block">
-      <div class="script-say">
-        <div class="script-say-label">Say This</div>
-        <p>"I deserve someone who is certain about me. You are not there and that is okay. But I have to go find the person who is."</p>
-      </div>
-      <div class="script-why">
-        <div class="script-why-label">Why It Works</div>
-        <p>Short. Final. Dignified. No explanation required. The women who walk away with the most power are the ones who say the least.</p>
-      </div>
+      <div class="script-say"><div class="script-say-label">Say This</div><p>"I deserve someone who is certain about me. You are not there and that is okay. But I have to go find the person who is."</p></div>
+      <div class="script-why"><div class="script-why-label">Why It Works</div><p>Short. Final. Dignified. No explanation required. The women who walk away with the most power are the ones who say the least.</p></div>
     </div>
     <div class="callout"><p>Walking away is not losing. It is choosing yourself over the wrong situation. That is always the right move.</p></div>
   </div>
@@ -850,16 +807,12 @@
     <p>The right words said calmly and clearly will always do more than a hundred anxious messages. You do not need to be cold. You do not need to be aggressive. You just need to be a woman who knows what she will and will not accept.</p>
     <p class="closing">Save these scripts. Practice them. Your confidence will speak before the words even do.</p>
   </div>
-
 </div>
 </div>
 
-<!-- ═══════════════════════════════════════════ -->
-<!-- PANEL 4: BONUS 2 — RED FLAG CHEAT SHEET   -->
-<!-- ═══════════════════════════════════════════ -->
+<!-- PANEL 4: BONUS 2 — RED FLAG CHEAT SHEET -->
 <div class="panel" id="panel-redflags">
 <div class="content-wrap">
-
   <div class="chapter">
     <div class="chapter-num">Bonus 2</div>
     <h2>The Red Flag <em>Cheat Sheet</em></h2>
@@ -870,7 +823,7 @@
   <div class="chapter">
     <div class="flag-section-head"><p>Section 1 — Communication Red Flags</p></div>
     <p class="flag-section-sub">How he communicates tells you everything about how he will treat you long term.</p>
-    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He only texts — never calls.</strong><span>Texting is low effort and low commitment. A man who wants you will want to hear your voice.</span></div></div>
+    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He only texts, never calls.</strong><span>Texting is low effort and low commitment. A man who wants you will want to hear your voice.</span></div></div>
     <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He takes hours or days to reply but is clearly active online.</strong><span>You are not a priority. You are an option he gets to when it is convenient.</span></div></div>
     <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He goes silent after conflict instead of talking it through.</strong><span>Stonewalling is emotional immaturity. It will only get worse in a real relationship.</span></div></div>
     <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He turns every serious conversation into a joke.</strong><span>He is uncomfortable with depth and will avoid it forever if you let him.</span></div></div>
@@ -880,53 +833,458 @@
   <div class="chapter">
     <div class="flag-section-head"><p>Section 2 — Commitment Red Flags</p></div>
     <p class="flag-section-sub">These are the signs he is not building anything real with you.</p>
-    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He introduces you as his 'friend' after months of dating.</strong><span>If he will not claim you, he is not ready to commit to you. It is that simple.</span></div></div>
-    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He says 'I am not ready' but keeps all the benefits of a relationship.</strong><span>Not ready for a title but ready for your time, affection, and loyalty. That is not confusion — that is convenience.</span></div></div>
-    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He talks about the future in vague terms but makes no real plans.</strong><span>'One day' and 'eventually' are not timelines. They are stall tactics.</span></div></div>
+    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He introduces you as his friend after months of dating.</strong><span>If he will not claim you, he is not ready to commit to you. It is that simple.</span></div></div>
+    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He says he is not ready but keeps all the benefits of a relationship.</strong><span>Not ready for a title but ready for your time, affection, and loyalty. That is not confusion. That is convenience.</span></div></div>
+    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He talks about the future in vague terms but makes no real plans.</strong><span>"One day" and "eventually" are not timelines. They are stall tactics.</span></div></div>
     <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He gets angry or defensive when you bring up commitment.</strong><span>A man who is serious about you welcomes the conversation. Defensiveness means he does not want to be held accountable.</span></div></div>
-    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He has been 'not ready' for longer than six months.</strong><span>Readiness is a decision, not a feeling that arrives on its own. He is choosing not to decide.</span></div></div>
+    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He has been not ready for longer than six months.</strong><span>Readiness is a decision, not a feeling that arrives on its own. He is choosing not to decide.</span></div></div>
   </div>
 
   <div class="chapter">
     <div class="flag-section-head"><p>Section 3 — Respect Red Flags</p></div>
     <p class="flag-section-sub">Disrespect rarely starts loud. It usually starts subtle and grows.</p>
     <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He cancels plans at the last minute and barely apologises.</strong><span>Your time does not matter to him. That will not change with a title.</span></div></div>
-    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He makes dismissive comments about your feelings or calls you 'too sensitive.'</strong><span>Your feelings are valid. A man who loves you will want to understand them, not minimise them.</span></div></div>
+    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He makes dismissive comments about your feelings or calls you too sensitive.</strong><span>Your feelings are valid. A man who loves you will want to understand them, not minimise them.</span></div></div>
     <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He is kind to you in private but ignores you in public.</strong><span>If he is embarrassed to be seen choosing you, he has not chosen you.</span></div></div>
     <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He compares you to other women.</strong><span>Comparison is a control tactic. You are not in a competition. You are either chosen or you are not.</span></div></div>
-    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He does not respect your 'no' — on anything.</strong><span>A man who pushes your boundaries in small things will push them in big things too.</span></div></div>
+    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He does not respect your no on anything.</strong><span>A man who pushes your boundaries in small things will push them in big things too.</span></div></div>
   </div>
 
   <div class="chapter">
     <div class="flag-section-head"><p>Section 4 — Consistency Red Flags</p></div>
     <p class="flag-section-sub">Love is not a mood. If it is only there sometimes, it is not love.</p>
-    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He is hot and cold — intense attention followed by days of distance.</strong><span>This is not passion. It is inconsistency designed to keep you anxious and attached.</span></div></div>
+    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He is hot and cold, intense attention followed by days of distance.</strong><span>This is not passion. It is inconsistency designed to keep you anxious and attached.</span></div></div>
     <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He only shows up when it is convenient for him.</strong><span>Real interest is consistent. Convenience is not the same as care.</span></div></div>
     <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He makes promises he does not keep.</strong><span>Reliability is character. A man who repeatedly breaks his word is showing you who he is.</span></div></div>
     <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>His effort drops significantly after you become more invested.</strong><span>He was pursuing you to win you. Now that he feels he has you, the effort stops. Do not reward this.</span></div></div>
   </div>
 
   <div class="chapter">
-    <div class="flag-section-head" style="background:var(--rose);"><p>Section 5 — Non-Negotiable Red Flags — Leave Immediately</p></div>
+    <div class="flag-section-head" style="background:var(--rose);"><p>Section 5 — Non-Negotiable Red Flags. Leave Immediately.</p></div>
     <p class="flag-section-sub">These are not yellow flags. These are reasons to exit without guilt or explanation.</p>
     <div class="flag-row"><span class="flag-emoji">🚨</span><div class="flag-text"><strong>Any form of physical, emotional, or verbal abuse.</strong><span>This never gets better on its own. Please leave and seek support.</span></div></div>
     <div class="flag-row"><span class="flag-emoji">🚨</span><div class="flag-text"><strong>He lies consistently, even about small things.</strong><span>A man who lies about small things lies about everything.</span></div></div>
-    <div class="flag-row"><span class="flag-emoji">🚨</span><div class="flag-text"><strong>He isolates you from your friends and family.</strong><span>Isolation is a control tactic. This is not love — this is possession.</span></div></div>
+    <div class="flag-row"><span class="flag-emoji">🚨</span><div class="flag-text"><strong>He isolates you from your friends and family.</strong><span>Isolation is a control tactic. This is not love. This is possession.</span></div></div>
     <div class="flag-row"><span class="flag-emoji">🚨</span><div class="flag-text"><strong>He has never been faithful and is proud of it.</strong><span>Watch actions, not promises. A pattern this established requires serious work he must want to do.</span></div></div>
     <div class="golden-rule">
       <p>The Golden Rule: You do not need a reason to leave someone who makes you feel small, confused, or like you are too much. Your peace is reason enough.</p>
     </div>
   </div>
-
 </div>
 </div>
 
-<!-- WhatsApp Float -->
-<a class="wa-float" href="https://wa.me/2349031375718?text=Hi%2C%20I%20need%20help%20with%20my%20membership" target="_blank" aria-label="WhatsApp Support">
-  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
+<!-- PANEL 5: BONUS 3 — 30-DAY TRACKER -->
+<div class="panel" id="panel-tracker">
+<div class="content-wrap">
+  <div class="chapter">
+    <div class="chapter-num">Bonus 3</div>
+    <h2>The 30-Day <em>High Value Reset Tracker</em></h2>
+    <div class="chapter-divider"></div>
+    <p>Reading the blueprint is the first step. Living it is what changes everything. This tracker keeps you accountable for 30 days so the shifts you make become permanent, not temporary.</p>
+    <p>Tap each day to mark it complete. Come back daily and check in honestly.</p>
+    <div class="callout"><p>You do not need to be perfect. You need to be consistent. Thirty days of small shifts create a woman he cannot walk away from.</p></div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Week 1 — Awareness</div>
+    <h2>Learning to <em>See the Pattern</em></h2>
+    <div class="chapter-divider"></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 1 — Identify the Trap</strong><span>Write down one way you have been too available this week. No judgment. Just honesty.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 2 — Count Your Initiations</strong><span>Track every time you reach out first today. Awareness before change.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 3 — Your Standards List</strong><span>Write three things you will no longer accept without consequence. Keep this list visible.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 4 — The Mirror Exercise</strong><span>Ask honestly: Am I pursuing someone who is pursuing me equally? Answer without softening it.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 5 — Your Life Audit</strong><span>List five things in your life that have nothing to do with him. Invest in one of them today.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 6 — Silence Practice</strong><span>If you feel the urge to text him first today, wait. Let him reach out. Notice what happens.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 7 — Week 1 Reflection</strong><span>What did you notice this week? Write one thing that surprised you about your own patterns.</span></div></div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Week 2 — Shifting</div>
+    <h2>Making the <em>First Real Changes</em></h2>
+    <div class="chapter-divider"></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 8 — Enforce One Boundary</strong><span>Something small, something real. Say no to something that does not serve you today. Notice how it feels.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 9 — Invest in Your Own Life</strong><span>Do one thing today that has nothing to do with any man. A hobby, a goal, a friendship.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 10 — Raise Your Communication Standard</strong><span>If he only texts, do not over-engage in a text thread today. Respond briefly. Let the standard speak.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 11 — Protect Your Emotions</strong><span>Before sharing something deeply personal today, ask: has he earned this? If not, keep it for yourself.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 12 — Watch His Actions</strong><span>Spend today observing only what he does, not what he says. Log it honestly.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 13 — The Pursuit Check</strong><span>Is he pursuing you or are you pulling him along? Answer honestly. Adjust accordingly.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 14 — Week 2 Reflection</strong><span>What changed this week? What did he do differently when you showed up differently?</span></div></div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Week 3 — Deepening</div>
+    <h2>Becoming Her <em>Without Effort</em></h2>
+    <div class="chapter-divider"></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 15 — Your Non-Negotiables</strong><span>Revisit the standards list from Day 3. Are you holding them? Tighten anything that has slipped.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 16 — Pour Into a Friendship</strong><span>Reach out to a woman in your life who pours into you. Invest in connections that are mutual.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 17 — The Confidence Check</strong><span>Do you feel more settled in yourself than two weeks ago? Write what has shifted internally.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 18 — Handle a Hard Moment Well</strong><span>When something tests you today, respond from your values, not your emotions. Notice the difference.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 19 — No Anxiety Spiralling</strong><span>If anxious thoughts come today, redirect them. Go do something for yourself instead of analysing him.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 20 — Celebrate a Win</strong><span>Name one thing you handled better in the last three weeks. Acknowledge your own growth. It is real.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 21 — Week 3 Reflection</strong><span>Three weeks in. Who are you becoming? Write it down. This version of you is who he needs to meet.</span></div></div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Week 4 — Embodying</div>
+    <h2>This Is Now <em>Who You Are</em></h2>
+    <div class="chapter-divider"></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 22 — Full Life Day</strong><span>Spend today completely absorbed in your own world. Plans, passions, people who matter. No waiting.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 23 — Speak a Boundary Out Loud</strong><span>Find one opportunity today to express a limit clearly and without apology. Even something small.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 24 — The Walk-Away Exercise</strong><span>Mentally practice leaving a situation that does not serve you. Feel the freedom in that decision.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 25 — Green Flag Awareness</strong><span>Think of the last man who showed you a genuine green flag. Did you notice it? Did you appreciate it?</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 26 — Measure the Change</strong><span>Compare yourself today to Day 1. What is different? What do you no longer accept? What do you now require?</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 27 — Gratitude to Yourself</strong><span>Write three things you are proud of yourself for doing differently this month. You earned this.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 28 — Set Your Next Standard</strong><span>What is one thing you are committing to permanently from here? Write it. Date it. Keep it.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 29 — Share the Shift</strong><span>Tell one woman in your life about one thing that changed for you this month. Spread this.</span></div></div>
+    <div class="tracker-day" onclick="toggleDay(this)"><div class="tracker-check"></div><div class="tracker-text"><strong>Day 30 — She Has Arrived</strong><span>You made it. Write a letter to the version of you from Day 1. Tell her what you know now.</span></div></div>
+  </div>
+
+  <div class="final-word">
+    <h3>You Did It</h3>
+    <p>Thirty days. Small shifts every single day. This is not a challenge you completed. This is a woman you became.</p>
+    <p class="closing">She was always in there. You just chose her.</p>
+  </div>
+</div>
+</div>
+
+<!-- PANEL 6: BONUS 4 — GREEN FLAG LIST -->
+<div class="panel" id="panel-greenflags">
+<div class="content-wrap">
+  <div class="chapter">
+    <div class="chapter-num">Bonus 4</div>
+    <h2>The Green Flag <em>List</em></h2>
+    <div class="chapter-divider"></div>
+    <p>You now know what to walk away from. This is what to walk toward. A man who is genuinely choosing you does not just avoid the bad things. He consistently does the right things, without being asked, without being reminded, without you having to settle.</p>
+    <div class="callout"><p>Green flags are not grand gestures. They are quiet, consistent patterns that tell you, over time, that this man is safe and serious about you.</p></div>
+  </div>
+
+  <div class="chapter">
+    <div class="flag-section-head" style="background:var(--teal);"><p>Section 1 — Communication Green Flags</p></div>
+    <p class="flag-section-sub">A man who communicates well will love well.</p>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He calls, not just texts.</strong><span>He wants to actually hear your voice. He makes time for real conversation, not just quick exchanges.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He responds in reasonable time and with genuine attention.</strong><span>Not immediately every time, but consistently. You never feel like you are chasing a reply.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He stays in difficult conversations instead of shutting down.</strong><span>When something is hard to talk about, he leans in. He does not go silent or deflect.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He remembers what you tell him.</strong><span>He brings up things you mentioned weeks ago. He is paying attention because he cares about the details of your life.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He is honest even when it is uncomfortable.</strong><span>He does not just tell you what you want to hear. He tells you the truth with care.</span></div></div>
+  </div>
+
+  <div class="chapter">
+    <div class="flag-section-head" style="background:var(--teal);"><p>Section 2 — Pursuit Green Flags</p></div>
+    <p class="flag-section-sub">The man who wants you makes it unmistakably clear.</p>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He initiates consistently without you prompting him.</strong><span>You do not have to engineer his attention. He reaches out because he genuinely wants to.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He makes concrete plans and follows through.</strong><span>Not "we should hang out sometime." A specific day, time, and plan, made in advance.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He introduces you to the people in his life.</strong><span>His friends know your name. His family is not a mystery. He is not keeping you separate.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He claims you without being asked.</strong><span>There is no ambiguity about what you are to him. He makes that known to you and to others.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He shows up more as time goes on, not less.</strong><span>Early effort followed by sustained effort. He is not chasing to win you and then coasting once he has you.</span></div></div>
+  </div>
+
+  <div class="chapter">
+    <div class="flag-section-head" style="background:var(--teal);"><p>Section 3 — Respect and Safety Green Flags</p></div>
+    <p class="flag-section-sub">You should feel safe, not anxious, with the right man.</p>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>Your no is always respected immediately.</strong><span>No negotiating, no sulking, no pressure. He accepts your limits as part of who you are.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He apologises genuinely and without being forced to.</strong><span>When he gets something wrong, he owns it. He does not defend, deflect, or make you feel dramatic.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He is the same person in public as he is in private.</strong><span>He treats you well everywhere, not just when it is convenient or when no one is watching.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He does not compare you to other women.</strong><span>You are not in competition in his mind. He chose you and that is reflected in how he speaks to you and about you.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>You feel calm around him, not anxious.</strong><span>You do not spend days analysing his messages or wondering where you stand. You simply know.</span></div></div>
+  </div>
+
+  <div class="chapter">
+    <div class="flag-section-head" style="background:var(--teal);"><p>Section 4 — Future-Building Green Flags</p></div>
+    <p class="flag-section-sub">A man who sees you in his future will show you that in small ways long before he says it out loud.</p>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He talks about the future and includes you in it naturally.</strong><span>Not vague one-day talk. Actual plans with you in them, made the way someone plans a future they intend to live.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He invests in understanding you over time.</strong><span>He knows how you feel about things that matter. He asks questions. He wants to know who you actually are, not just who he imagined you to be.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He is willing to do the work relationships require.</strong><span>Hard conversations, compromise, growth. He does not disappear when things are not easy.</span></div></div>
+    <div class="green-row"><span class="green-emoji">💚</span><div class="green-text"><strong>He supports your goals and is proud of your growth.</strong><span>Your success does not threaten him. He celebrates it. He wants you to become more, not less.</span></div></div>
+    <div class="golden-rule">
+      <p>The Final Green Flag: He makes you feel chosen every day, without you having to ask for it, chase it, or earn it all over again. That is what real commitment looks like.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- PANEL 7: BONUS 5 — WHEN HE GOES COLD -->
+<div class="panel" id="panel-coldresponse">
+<div class="content-wrap">
+  <div class="chapter">
+    <div class="chapter-num">Bonus 5</div>
+    <h2>When He Goes Cold <em>The 3-Step Response</em></h2>
+    <div class="chapter-divider"></div>
+    <p>He was warm, attentive, consistent. Then something shifted. The messages slowed. The energy changed. And now you are sitting with that sick, anxious feeling wondering what you did wrong and what you should say.</p>
+    <p>Here is what you do. Three steps. In order.</p>
+    <div class="callout"><p>The worst thing you can do when a man goes cold is panic. The second worst thing is chase. This guide shows you what to do instead.</p></div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Step 1</div>
+    <h2>Do <em>Nothing</em> for 48 Hours</h2>
+    <div class="chapter-divider"></div>
+    <p>This is the hardest step and the most important one. Do not text. Do not call. Do not send a "just checking in" message. Do not like his posts. Do not do anything that signals you have noticed the shift and are anxious about it.</p>
+    <p>Wait 48 hours minimum. During this time, put your energy back into your own life. See a friend. Work on something you have been putting off. Do something that reminds you that your world does not stop when his attention does.</p>
+    <div class="insight">
+      <div class="insight-label">Why This Works</div>
+      <p>When you go quiet in response to his silence, you do two things. First, you protect your dignity. Second, you create the space for him to actually miss you. A man who went cold to test your reaction will be surprised by this response. A man who went cold because life got busy will resurface naturally. Either way, you win.</p>
+    </div>
+    <div class="rule-box">
+      <div class="rule-label">The 48-Hour Rule</div>
+      <h3>Silence is not punishment. It is self-respect in action.</h3>
+      <p>You are not playing games. You are simply refusing to chase someone who has not given you a reason to.</p>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Step 2</div>
+    <h2>Send One <em>Clean Message</em></h2>
+    <div class="chapter-divider"></div>
+    <p>After 48 hours, if he has not reached out, you may send one message. One. Not a paragraph. Not a string of texts. One clear, calm message that communicates your standard without panic or accusation.</p>
+    <div class="script-block">
+      <div class="script-say"><div class="script-say-label">The Message</div><p>"Hey. I have noticed things have felt quieter between us. I am not going to pretend otherwise. I hope you are okay. When you are ready to talk properly, I am here. But I am not going to chase the distance."</p></div>
+      <div class="script-why"><div class="script-why-label">Why This Works</div><p>It acknowledges reality without drama. It expresses care without desperation. And the final sentence, "I am not going to chase the distance," communicates your standard clearly and permanently. He now knows exactly who he is dealing with.</p></div>
+    </div>
+    <div class="insight">
+      <div class="insight-label">After You Send It</div>
+      <p>Send it and put your phone down. Do not stare at the screen waiting. Do not send a follow-up. You have said what needed to be said. The rest is his move.</p>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Step 3</div>
+    <h2>Accept His Response <em>as Your Answer</em></h2>
+    <div class="chapter-divider"></div>
+    <p>What he does next tells you everything. Read it clearly and without negotiation.</p>
+    <div class="flag-row" style="border-radius:3px 3px 0 0;"><span class="flag-emoji">💚</span><div class="flag-text"><strong>He reaches out with a real explanation and shows up differently.</strong><span>This is a man who had something going on but values you enough to address it. Receive it warmly but watch whether the change lasts.</span></div></div>
+    <div class="flag-row"><span class="flag-emoji">💚</span><div class="flag-text"><strong>He calls instead of texting.</strong><span>A phone call in response to this message is a strong green flag. He is taking you seriously.</span></div></div>
+    <div class="flag-row"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He sends a vague or dismissive reply and continues the same pattern.</strong><span>He is telling you this is who he is. Believe him.</span></div></div>
+    <div class="flag-row" style="border-radius:0 0 3px 3px;"><span class="flag-emoji">🚩</span><div class="flag-text"><strong>He does not respond at all.</strong><span>This is your clearest answer. He is not confused about you. He has made his choice. Now make yours.</span></div></div>
+    <div class="callout"><p>A man who goes cold and does not come back when you handled it with this much dignity was never the right man. His absence after this is a gift.</p></div>
+    <div class="rule-box">
+      <div class="rule-label">The Final Word</div>
+      <h3>You handled it with class. That is all you can control.</h3>
+      <p>However he responds, you walked through this moment as a high-value woman. That matters regardless of the outcome.</p>
+    </div>
+  </div>
+
+  <div class="final-word">
+    <h3>Remember</h3>
+    <p>The anxiety you feel when he goes cold is not evidence that you did something wrong. It is evidence that you care. That is not a flaw. The flaw is letting that anxiety make your decisions for you.</p>
+    <p class="closing">These three steps hand the decisions back to where they belong. With you.</p>
+  </div>
+</div>
+</div>
+
+<!-- PANEL 8: BONUS 6 — COMFORT TRAP DETECTOR -->
+<div class="panel" id="panel-detector">
+<div class="content-wrap">
+  <div class="chapter">
+    <div class="chapter-num">Bonus 6</div>
+    <h2>The Comfort Trap <em>Cheat Detector</em></h2>
+    <div class="chapter-divider"></div>
+    <p>Answer each question honestly. There are no wrong answers here. There is only clarity. Tap the option that reflects your situation most accurately right now.</p>
+    <div class="callout"><p>The Comfort Trap is not obvious when you are in it. That is what makes it a trap. This diagnostic is designed to show you what you may have been explaining away.</p></div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">The Diagnostic</div>
+    <h2>Answer <em>Honestly</em></h2>
+    <div class="chapter-divider"></div>
+
+    <div class="detector-question">
+      <div class="detector-q">1. Who initiates contact more often in this situation?</div>
+      <div class="detector-options">
+        <button class="detector-opt" onclick="selectOpt(this,1,'trap')">Mostly me</button>
+        <button class="detector-opt" onclick="selectOpt(this,1,'neutral')">About equal</button>
+        <button class="detector-opt" onclick="selectOpt(this,1,'safe')">Mostly him</button>
+      </div>
+    </div>
+
+    <div class="detector-question">
+      <div class="detector-q">2. Has he defined what you are to him?</div>
+      <div class="detector-options">
+        <button class="detector-opt" onclick="selectOpt(this,2,'trap')">No, it is undefined</button>
+        <button class="detector-opt" onclick="selectOpt(this,2,'neutral')">Sort of, but vaguely</button>
+        <button class="detector-opt" onclick="selectOpt(this,2,'safe')">Yes, clearly</button>
+      </div>
+    </div>
+
+    <div class="detector-question">
+      <div class="detector-q">3. How do you feel after most interactions with him?</div>
+      <div class="detector-options">
+        <button class="detector-opt" onclick="selectOpt(this,3,'trap')">Anxious or unsure</button>
+        <button class="detector-opt" onclick="selectOpt(this,3,'neutral')">Sometimes okay, sometimes not</button>
+        <button class="detector-opt" onclick="selectOpt(this,3,'safe')">Settled and wanted</button>
+      </div>
+    </div>
+
+    <div class="detector-question">
+      <div class="detector-q">4. Does he make concrete plans or keep things vague?</div>
+      <div class="detector-options">
+        <button class="detector-opt" onclick="selectOpt(this,4,'trap')">Very vague, rarely commits</button>
+        <button class="detector-opt" onclick="selectOpt(this,4,'neutral')">Sometimes plans, sometimes not</button>
+        <button class="detector-opt" onclick="selectOpt(this,4,'safe')">Makes real plans and follows through</button>
+      </div>
+    </div>
+
+    <div class="detector-question">
+      <div class="detector-q">5. Are you getting the benefits of a relationship without the title?</div>
+      <div class="detector-options">
+        <button class="detector-opt" onclick="selectOpt(this,5,'trap')">Yes, and it has been going on for a while</button>
+        <button class="detector-opt" onclick="selectOpt(this,5,'neutral')">Somewhat, it is unclear</button>
+        <button class="detector-opt" onclick="selectOpt(this,5,'safe')">No, we are clearly defined</button>
+      </div>
+    </div>
+
+    <div class="detector-question">
+      <div class="detector-q">6. Has he met or does he plan to meet the important people in your life?</div>
+      <div class="detector-options">
+        <button class="detector-opt" onclick="selectOpt(this,6,'trap')">No, and it has not come up</button>
+        <button class="detector-opt" onclick="selectOpt(this,6,'neutral')">It has been mentioned but nothing concrete</button>
+        <button class="detector-opt" onclick="selectOpt(this,6,'safe')">Yes, naturally and without pressure</button>
+      </div>
+    </div>
+
+    <button class="detector-opt" style="margin-top:20px;padding:12px 28px;border-radius:2px;font-size:12px;letter-spacing:0.1em;" onclick="showDetectorResult()">See My Result</button>
+
+    <div class="detector-result trap" id="result-trap">
+      <h4>You Are In the Comfort Trap</h4>
+      <p>Based on your answers, the patterns here match the Comfort Trap. He is comfortable. He is enjoying what is here. But he is not deciding. This is not a reflection of your value. It is a reflection of the fact that you have not yet shown him what it would cost him to lose you.</p>
+      <p style="margin-top:12px;">The move right now is to pull your energy back. Not dramatically. Not with speeches. Simply stop making it easy to keep you without choosing you. Go back to the Blueprint and revisit Chapter 1 and Chapter 6. Then use the Boundary Scripts when you are ready.</p>
+    </div>
+
+    <div class="detector-result safe" id="result-safe">
+      <h4>You Are in Good Territory</h4>
+      <p>Your answers suggest this man is showing up for you in real ways. He is not perfect, no one is, but the core patterns are healthy. He is pursuing. He is consistent. He is choosing you.</p>
+      <p style="margin-top:12px;">Your work now is to stay in your own power. Keep investing in your life. Keep your standards high. Appreciate what is being built here and make sure you keep showing up as the woman he fell for.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- PANEL 9: BONUS 7 — 9 POWER TEXTS -->
+<div class="panel" id="panel-powertexts">
+<div class="content-wrap">
+  <div class="chapter">
+    <div class="chapter-num">Bonus 7</div>
+    <h2>9 Power Texts <em>A Man Cannot Resist</em></h2>
+    <div class="chapter-divider"></div>
+    <p>These are not manipulation tactics. They are messages that communicate confidence, mystery, and genuine warmth in a way that creates real attraction. Each one is designed for a specific moment. Use the right one at the right time.</p>
+    <div class="callout"><p>The most attractive message you can ever send a man is one that makes him feel like he might be missing something exceptional. These nine texts do exactly that.</p></div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Text 1</div>
+    <h2>The <em>Curiosity Opener</em></h2>
+    <div class="chapter-divider"></div>
+    <p class="chapter-lead">Use this when you want to restart a conversation that has gone quiet.</p>
+    <div class="power-text-block">
+      <div class="power-text-header"><span>The Text</span></div>
+      <div class="power-text-msg"><p>"Something happened today that made me think of you. Not going to say what it was. Just thought you should know."</p></div>
+      <div class="power-text-why"><p>This creates instant curiosity without chasing. He will respond. Every time. The mystery of what made you think of him will bother him until he asks.</p></div>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Text 2</div>
+    <h2>The <em>Soft Vanish</em></h2>
+    <div class="chapter-divider"></div>
+    <p class="chapter-lead">Use this when you have been too available and want to shift the energy.</p>
+    <div class="power-text-block">
+      <div class="power-text-header"><span>The Text</span></div>
+      <div class="power-text-msg"><p>"Been a bit caught up in my own world lately. Hope things are good with you."</p></div>
+      <div class="power-text-why"><p>Short, warm, and totally unbothered. This tells him you have a life that does not revolve around him. That shift in energy is more attractive than almost anything else you could say.</p></div>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Text 3</div>
+    <h2>The <em>Standard Setter</em></h2>
+    <div class="chapter-lead">Use this when the communication has been too text-heavy and you want to raise the bar.</div>
+    <div class="chapter-divider"></div>
+    <div class="power-text-block">
+      <div class="power-text-header"><span>The Text</span></div>
+      <div class="power-text-msg"><p>"I am honestly better over a call than over text. If you want to actually catch up, you know how to find me."</p></div>
+      <div class="power-text-why"><p>One sentence. It communicates confidence, sets a standard, and creates a challenge. The right man will call. The wrong man will reveal himself by not bothering.</p></div>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Text 4</div>
+    <h2>The <em>Compliment That Creates Pull</em></h2>
+    <div class="chapter-lead">Use this when the energy is good and you want to deepen the connection.</div>
+    <div class="chapter-divider"></div>
+    <div class="power-text-block">
+      <div class="power-text-header"><span>The Text</span></div>
+      <div class="power-text-msg"><p>"I do not say this to a lot of people but there is something about talking to you that I actually look forward to. That is rare for me."</p></div>
+      <div class="power-text-why"><p>This is a genuine, specific compliment that also communicates that you have high standards and that he has met them. Men want to be rare in a high-value woman's eyes. This tells him he is.</p></div>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Text 5</div>
+    <h2>The <em>Busy Life Signal</em></h2>
+    <div class="chapter-lead">Use this when you want to remind him that your time is genuinely limited.</div>
+    <div class="chapter-divider"></div>
+    <div class="power-text-block">
+      <div class="power-text-header"><span>The Text</span></div>
+      <div class="power-text-msg"><p>"This week has been a lot. Finally coming up for air. What is going on with you?"</p></div>
+      <div class="power-text-why"><p>Simple but powerful. It shows you have a full life, positions your attention as something that has been occupied elsewhere, and then opens the door warmly. He feels like he is receiving your attention, not just your availability.</p></div>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Text 6</div>
+    <h2>The <em>Playful Challenge</em></h2>
+    <div class="chapter-lead">Use this when the conversation has been going well and you want to create tension.</div>
+    <div class="chapter-divider"></div>
+    <div class="power-text-block">
+      <div class="power-text-header"><span>The Text</span></div>
+      <div class="power-text-msg"><p>"You know, most men would have made more of an effort by now. I am starting to think you enjoy the challenge more than the reward."</p></div>
+      <div class="power-text-why"><p>Playful, confident, and a tiny bit provocative. This type of message wakes a man up. It tells him there is a standard being measured here and he is not quite meeting it yet. That energy drives pursuit.</p></div>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Text 7</div>
+    <h2>The <em>Scarcity Signal</em></h2>
+    <div class="chapter-lead">Use this when you want him to feel the weight of your time being finite.</div>
+    <div class="chapter-divider"></div>
+    <div class="power-text-block">
+      <div class="power-text-header"><span>The Text</span></div>
+      <div class="power-text-msg"><p>"I have been talking to a few people lately but honestly my schedule is getting more selective. I only have so much energy for things that feel like they are actually going somewhere."</p></div>
+      <div class="power-text-why"><p>This is the scarcity principle applied with grace. It is not a threat. It is just the truth stated plainly. And it creates urgency in a man who has been comfortable taking his time.</p></div>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Text 8</div>
+    <h2>The <em>Walk-Away Warning</em></h2>
+    <div class="chapter-lead">Use this when things have been inconsistent and you need him to feel the shift.</div>
+    <div class="chapter-divider"></div>
+    <div class="power-text-block">
+      <div class="power-text-header"><span>The Text</span></div>
+      <div class="power-text-msg"><p>"I like where this could go. But I am also completely okay with where I already am. Just thought you should know that about me."</p></div>
+      <div class="power-text-why"><p>This is one of the most powerful things you can communicate. You are interested but not desperate. You see potential but you are not sitting around waiting for it to materialise. That combination is irresistible to a man who is used to women who need him.</p></div>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <div class="chapter-num">Text 9</div>
+    <h2>The <em>Final Level</em></h2>
+    <div class="chapter-lead">Use this only with a man who has shown genuine consistent interest and you are ready to open the door wider.</div>
+    <div class="chapter-divider"></div>
+    <div class="power-text-block">
+      <div class="power-text-header"><span>The Text</span></div>
+      <div class="power-text-msg"><p>"I have been thinking about it and I think you deserve a real answer. I like you. Not in a complicated way. Just genuinely. What you do with that is entirely up to you."</p></div>
+      <div class="power-text-why"><p>Vulnerability offered at exactly the right moment to the right person is the most powerful text you will ever send. This one works because it is honest, confident, and completely unbothered about his reaction. You are not begging. You are simply offering something real and leaving the decision with him.</p></div>
+    </div>
+    <div class="callout"><p>Save this one. It is not for early stages or uncertain men. It is for the man who has earned the right to hear it. When you send it to the right person at the right time, it lands like nothing else.</p></div>
+  </div>
+
+  <div class="final-word">
+    <h3>A Note on Using These</h3>
+    <p>The most important thing about these texts is not the words themselves. It is the energy behind them. If you send them from a place of desperation or anxiety, they will not land. If you send them from a place of genuine confidence and self-worth, they will change the dynamic completely.</p>
+    <p class="closing">Be the woman these words describe. Then the words will take care of themselves.</p>
+  </div>
+</div>
+</div>
 
 <script>
 function showTab(name, btn) {
@@ -935,6 +1293,36 @@ function showTab(name, btn) {
   document.getElementById('panel-' + name).classList.add('active');
   btn.classList.add('active');
   window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function toggleDay(el) {
+  el.classList.toggle('checked');
+  var check = el.querySelector('.tracker-check');
+  check.textContent = el.classList.contains('checked') ? '✓' : '';
+}
+
+var detectorAnswers = {};
+function selectOpt(btn, q, val) {
+  var opts = btn.parentElement.querySelectorAll('.detector-opt');
+  opts.forEach(function(o){ o.classList.remove('selected'); });
+  btn.classList.add('selected');
+  detectorAnswers[q] = val;
+}
+
+function showDetectorResult() {
+  var trapCount = 0;
+  var safeCount = 0;
+  for (var q in detectorAnswers) {
+    if (detectorAnswers[q] === 'trap') trapCount++;
+    if (detectorAnswers[q] === 'safe') safeCount++;
+  }
+  document.getElementById('result-trap').classList.remove('show');
+  document.getElementById('result-safe').classList.remove('show');
+  if (trapCount >= 3) {
+    document.getElementById('result-trap').classList.add('show');
+  } else {
+    document.getElementById('result-safe').classList.add('show');
+  }
 }
 </script>
 
